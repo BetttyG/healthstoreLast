@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @order.order_date %>
+   <%= @order.status %>
+ 
+ 
+</p>
+  <strong>User ID: This user id  is:<%= @order.id %></strong>
+
+   
+ 
+
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
+
+<h1>Items in this order</h1>
+
+<table id="customers">
+
+<% @orderitems.each do |orderitem|  %>
+<tr>
+  <td><%= orderitem.title %></td>
+  <td><%= orderitem.quantity %></td>
+</tr>
+
+<% end %>
+</table>
+<a href="/shipped/" class="button">Mark as shipped</a>
