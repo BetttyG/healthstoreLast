@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+    #added by bea:
+  before_action :authenticate_user!, except: [:show, :index, :search]
   # GET /items
   # GET /items.json
   def index
@@ -10,6 +11,11 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+  end
+  
+  def search
+    st = "%#{params[:q]}%"
+    @items = Item.where("title like ?", st)
   end
 
   # GET /items/new
@@ -25,7 +31,8 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
+      # added by bea:
+  @order.user = current_user
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }

@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if @items.length == 0 %>
+<h2>No item found.....try search again</h2>
+<% end %>
 
- <div id="itemsContainer">
+<div id="itemsContainer">
   
   <h1>Items</h1>
      
@@ -15,23 +17,24 @@
         Category: <%= item.category %>
         <br>
         Brand: <%= item.brand %></p>
+        
        <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+       
        <p>
-        <% if current_user && !current_user.admin %>
+       <% if current_user && !current_user.admin %>  
         <a href="/cart/<%= item.id %>" class="button">Add To Cart</a>
         <% end %>
-        <% if current_user && current_user.admin %>
          
+          
+        <% if current_user && current_user.admin %>   
          <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
          <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
          <%= link_to 'New Item',  new_item_path, :class => "button", :role => "button" %>
-         
-         <% end %>
+          <% end %>
        </p>
         
       </div>
+   
     <% end %>
       
 </div>
-
-

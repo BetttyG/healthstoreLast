@@ -1,8 +1,10 @@
 <footer class="foot">
     
-<a href="/orders" class "button"> View Orders</a>
-
-<% if user_signed_in? %>
-<%= link_to 'Update profile', edit_user_registration_path %>
-<% end %>
+    <% if current_user && current_user.admin %>   
+        <a href="/orders" class "button"> View Orders</a>
+     <% end %>
+ 
+    <% if user_signed_in? %>
+        <%= link_to 'Update profile', edit_user_registration_path %>
+    <% end %>
 </footer>
