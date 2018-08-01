@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create
-#User.create!([
-#    {email: "admin5@gmail.com", password: "123456", admin: true},
-#    {email: "admin3@gmail.com", password: "123456", admin: true},
-#    {email: "user4@gmail.com", password: "123456", admin: false}
-#])
+User.create!([
+    {email: "admin5@gmail.com", password: "123456", admin: true},
+    {email: "admin3@gmail.com", password: "123456", admin: true},
+    {email: "user4@gmail.com", password: "123456", admin: false}
+])
 #environment_seed_file = File.join(Rails.root, 'db', 'seeds', "#{Rails.env}.rb")
 
 # def seed_image(file_name)
