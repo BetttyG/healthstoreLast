@@ -18,7 +18,7 @@ group :production do
  gem 'pg'
 end
 
-
+gem 'sprockets', '~>3.7.2'
 # gem 'sqlite3'
 
 # replace gem "sqlite3" with
