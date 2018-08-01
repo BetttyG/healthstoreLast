@@ -4,7 +4,7 @@
 <div class="itemhols">
     <h2><%= category.title %></h2>
     <% if current_user && current_user.admin %>
-    <%= link_to (image_tag category.image, :class=>"itemholsIm"), category %>
+    <%= link_to (image_tag category.image, :style => "height:100px"), category %>
     
     <% else %>
     <%= image_tag category.image, :class=>"itemholsIm" %>

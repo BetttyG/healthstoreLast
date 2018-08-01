@@ -4,7 +4,7 @@
     <% @items.each do |item| %>
       <div class="itemhols">
         <h3><%= item.title %></h3>
-        <%= link_to (image_tag item.image_url, :class=>"itemholsIm"), item %>
+        <%= link_to (image_tag item.image_url, :style => "height:100px"), item %>
        <p><%= item.description %>
        </p>
        <p><%= item.price %>

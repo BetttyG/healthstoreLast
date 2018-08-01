@@ -39,11 +39,16 @@ li a {
 }
 .mainCont { 
     
-    margin: auto;
-    width:80%;
-    border: 3px solid #b3e0ff;
-    padding: 10px;
-    text-align: center;
+    /*margin: auto;*/
+    /*width:80%;*/
+    /*border: 3px solid #b3e0ff;*/
+    /*padding: 10px;*/
+    /*text-align: center;*/
+  font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #ffffff;
 }
 .welcomeIm {width: 30%;}
 .foot {
@@ -188,21 +193,20 @@ body {
 }
 .panel-body {
   color: #364347;
+  border-color: #d6e1e5;
+  border: 1px solid #fff;
 }
 .panel-default {
-  border-color: #d6e1e5;
+  border-color: #fff;
 }
 .panel-default > .panel-heading {
   color: #364347;
   background-color: #e1eef3;
-  border-color: #d6e1e5;
+  border-color: #102601;
+  
+  
 }
-.panel-default > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #d6e1e5;
-}
-.panel-default > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #d6e1e5;
-}
+
 
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -211,10 +215,11 @@ body {
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   padding: 14px 5px;
-  border-top: 1px solid #d6e1e5;
+  border-top: 1px solid #679E02;
+
 }
 .table > thead > tr > th {
-  border-bottom: 2px solid #d6e1e5;
+  border-bottom: 0px solid #d6e1e5;
   font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif;
 }
 
