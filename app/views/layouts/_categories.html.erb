@@ -3,10 +3,15 @@
 <% @categories.each do |category|  %>
 <div class="itemhols">
     <h2><%= category.title %></h2>
+    <% if current_user && current_user.admin %>
     <%= link_to (image_tag category.image, :class=>"itemholsIm"), category %>
+    
+    <% else %>
+    <%= image_tag category.image, :class=>"itemholsIm" %>
+     <% end %>
     <p><%= category.description %></p>
-    <p><a href="/category/"<%= category.title %> </p>
-    <%= link_to (category.title), category %>
+    <p><a href="/category/<%= category.title %>" class="button"><%= category.title %></a></p>
+
 </div>
 
 <% end %>

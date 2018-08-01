@@ -16,7 +16,7 @@ end
     get '/shipped/:id' => 'orders#shipped'
   get 'cart/index'
   
-  get 'category/:title', to: 'static_pages#category'
+  get 'category/:title' => 'static_pages#category'
   
   resources :items
   root 'static_pages#home'
