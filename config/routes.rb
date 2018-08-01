@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   #get 'users/show'
   
   resources :orders do resources:orderitemsend
@@ -14,6 +15,8 @@ end
   get '/payment' => 'orders#pay'
     get '/shipped/:id' => 'orders#shipped'
   get 'cart/index'
+  
+  get 'category/:title', to: 'static_pages#category'
   
   resources :items
   root 'static_pages#home'
