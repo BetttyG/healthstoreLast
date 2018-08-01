@@ -14,7 +14,7 @@
     </tr>
 </table>
 
-<table id="customers">
+<table id="customers" >
     <% @total = 0 %>
     
     <% @orderitems.each do |id, quantity| %>
@@ -43,9 +43,11 @@
     
     </tr>
     </table>
-    <table id="customers">
-        <tr><a href="/payment" class="button">Pay Now </a></a></tr>
+    </br>
+    <table id="customers" >
+        <tr><a href="/payment" class="btn btn-block btn-info active btn-embossed ">Pay Now </a></a></tr>
     </table>
+    </br>
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
   <!-- Identify your business so that you can collect the payments. -->

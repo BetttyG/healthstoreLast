@@ -1,34 +1,36 @@
 <header class="headSec">
+      <div class="collapse navbar-collapse" id="navbar-collapse-2">
       <h1>Health Store</h1>
       
+      
       <ul>
-        <li><%= link_to "Home",  "/" %></li>
-        <li><%= link_to "Products", "/items" %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-        <li><%= link_to "View Cart", "/cart"  %></li>
+        <li><p class="navbar-text navbar-right"><%= link_to "Home",  "/" %></p></li>
+        <li><p class="navbar-text navbar-right"><%= link_to "Products", "/items" %></p></li>
+        <li><p class="navbar-text navbar-right"><%= link_to "About", about_path %></p></li>
+        <li><p class="navbar-text navbar-right"><%= link_to "Help", help_path %></p></li>
         
-        <% if user_signed_in?%>
+        <% if user_signed_in? && session[:cart] %>
+        <li><p class="navbar-text navbar-right"><%= link_to "View Cart", "/cart"  %></p></li>
         
-        <li><a h ref="#"> Hello <%= current_user.email %></li>
-        <%-# commented line - the enext line is to edit user profile, by Bea -%>
-        <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-        <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
-        
+
+
+        <% end %> 
+        <% if user_signed_in? %>
+        <li><p class="navbar-text navbar-right"><%= link_to 'Edit Profile', edit_user_registration_path %></p></li>
+        <li><p class="navbar-text navbar-right"><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></p></li>
+        <li><p class="navbar-text navbar-right"><%= link_to 'Show Profile ' , user_path(current_user) %></p></li>
         <% else %>
          
-        <li><%= link_to 'Create Account', new_user_registration_path  %></li>
+        <li><p class="navbar-text navbar-right"><%= link_to 'Create Account', new_user_registration_path  %></p></li>
           
-        <li><%= link_to 'Log In', new_user_session_path  %></li>
-        <!-- added by bea-->
-        <% #if  current_user.isAdmin = 0 %>
-          <li>I am a user</li>
-        <%# else %>
-          <li>I am an Admin</li>
-        <% #end %>
+        <li><p class="navbar-text navbar-right"><%= link_to 'Log In', new_user_session_path  %></p></li>
         
         <% end %> 
+        <!-- added by bea-->
+        <% if current_user && current_user.admin %>
+        <li><p class="navbar-text navbar-right">I am an Admin</p></li>
+        <% end %>
       </ul>
       
-      
+      </div>
     </header>

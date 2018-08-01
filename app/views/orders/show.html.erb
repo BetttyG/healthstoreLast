@@ -22,20 +22,33 @@
   <strong>Status:</strong>
   <%= @order.status %>
 </p>
-
+<% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+<% end %>
+<% if current_user %>
 
-<h1>Items in this order</h1>
+<%= link_to 'Back', orders_path %>
+<% end %>
+<div class="panel panel-default">
+  <h1>Items in this order</h1>
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel panel-default">
+    <table class="table">
 
-<table id="customers">
-
-<% @orderitems.each do |orderitem|  %>
-<tr>
-  <td><%= orderitem.title %></td>
-  <td><%= orderitem.quantity %></td>
-</tr>
+    <% @orderitems.each do |orderitem|  %>
+      <thead>
+      <tr>
+        <td><%= orderitem.title %></td>
+        <td><%= orderitem.quantity %></td>
+      </tr>
+    </thead>
 
 <% end %>
+
 </table>
-<a href="/shipped/" class="button">Mark as shipped</a>
+</div>
+</div>
+<% if current_user && current_user.admin %>
+  <a href="/shipped/" class="button">Mark as shipped</a>
+<% end %>

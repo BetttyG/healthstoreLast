@@ -1,5 +1,6 @@
 class CartController < ApplicationController
   before_action :authenticate_user! 
+
   def add
     #get the id of the product
     id = params[:id]
@@ -22,14 +23,18 @@ class CartController < ApplicationController
     redirect_to :action => :index
     
   end
-  
+  # added by bea
+  def show
+  @cart = Cart.find(params[:id])
+  end
+  ###
   def remove
     id = params[:id]
     cart = session[:cart]
     cart.delete id
     redirect_to :action => :index
   end
-  
+
   def clearCart
     # clear cart and remove all items 
     session[:cart] = nil
@@ -68,4 +73,5 @@ class CartController < ApplicationController
       
       # session[:cart] = nil  hidden for development, Now the cart is emptied when we go to the checkout 
   end
+  
 end

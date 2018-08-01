@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
+  #get 'users/show'
+  
   resources :orders do resources:orderitemsend
 end
 
   devise_for :users do resources:orders end
+  resources :users
 
-  
   get '/checkout' =>'cart#createOrder'
   
   post '/search' =>'items#search'
   
-    get '/payment' => 'orders#pay'
+  get '/payment' => 'orders#pay'
     get '/shipped/:id' => 'orders#shipped'
   get 'cart/index'
   

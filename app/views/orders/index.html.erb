@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
-
-<table>
+<div class="panel panel-default">
+  <h1>Items in this order</h1>
+  <div class="panel-heading">Orders</div>
+  <div class="panel panel-default">
+    <table class="table">
   <thead>
     <tr>
       <th>Order date</th>
@@ -15,17 +17,25 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <% if current_user && current_user.admin %>
         <td><%= order.order_date %></td>
         <td><%= order.user %></td>
         <td><%= order.status %></td>
+        
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', order, data: { confirm: 'Are you sure?' } %></td>
+        <!--<%= link_to 'New Order', new_order_path %>-->
+        <% end %>
+        <% if current_user && current_user.admin %>
+          <td><%= link_to order.order_date, order_path(order) %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+

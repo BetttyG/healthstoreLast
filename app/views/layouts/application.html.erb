@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div>
+
     <title><%= yield(:title) %> |Healthstore</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </div>
+
   </head>
 
   <body>
-     <%= render 'layouts/header' %> 
-        <div class="container">
-          <p class="notice"><%= flash[notice] %></p>
+
+
+
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/cartTotal' %>
+
+    <div class="container">
+      <p class="notice"><%= flash[notice] %></p>
     <%= yield %>
-    </div>
     
+  </div>
     
     <%= render 'layouts/footer' %> 
-    
+
   </body>
 </html>

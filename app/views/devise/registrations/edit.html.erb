@@ -4,6 +4,37 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+    <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+  
+     <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name , autofocus: true %>
+  </div> 
+  
+       <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_field :date_of_birth , autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  <div class="radio_button">
+            <%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Female" %><br/>
+          <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "Male" %>
+  </div>
+  
+  
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -41,3 +72,4 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+<h3>Show Profile <%= link_to @user.name, user_path(@user) %></h3>
