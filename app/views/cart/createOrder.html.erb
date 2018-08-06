@@ -1,10 +1,10 @@
-<div id="itemsContainer">
+<div id="prodCont">
     <h1>Thank You</h1>
     <p>You have just placed an order order <%=@orderReg %> </p>
 </div>
 
 
-<table id="customers">
+<table>
     <tr>
         
     <% @orders.limit(1).order(id: :desc).each do |order| %>
@@ -14,7 +14,7 @@
     </tr>
 </table>
 
-<table id="customers" >
+<table id="default" >
     <% @total = 0 %>
     
     <% @orderitems.each do |id, quantity| %>
@@ -35,16 +35,16 @@
     <tr>
     <td>Order Total: €<%= @total %> </td>
     <%# instance variable shipping%>
-    <% shipping = 19 %> 
+    <% shipping = 9.99 %> 
     
     <% @overall = @total + shipping %>
-    <td>Shipping: €19</td>
+    <td>Shipping: €9.99</td>
     <td>Overall Order Total: <%= number_to_currency(@overall, :unit => "€") %></td>
     
     </tr>
     </table>
     </br>
-    <table id="customers" >
+    <table id="default" >
         <tr><a href="/payment" class="btn btn-block btn-info active btn-embossed ">Pay Now </a></a></tr>
     </table>
     </br>
@@ -77,7 +77,7 @@
   <!-- Display the payment button. -->
   <input type="image" name="submit" border="0"
     src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
-    alt="Buy Now">
+    alt="Buy Now with PayPal">
 
   <img alt="" border="0" width="1" height="1"
   src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >

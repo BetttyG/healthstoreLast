@@ -27,6 +27,11 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address , autofocus: true %>
+  </div>
   <div class="radio_button">
             <%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Female" %><br/>
           <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "Male" %>

@@ -1,10 +1,11 @@
-<% if current_user %>test1
+<% if current_user %>
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-test2
+
 <p>User name: <%= @user.name %></p>
 <p>Date of birth: <%= @user.date_of_birth %></p>
-test3
-<table id="orders" border="1">
+<p>Address: <%= @user.address %></p>
+
+<table id="defaultS">
     <% @user_orders.each do |order| %>
     <tr>
 
@@ -13,12 +14,14 @@ test3
     </tr>
     <% end %>
 </table>
-<% if user_signed_in? %>
+<div>
+<h3><% if user_signed_in? %>
     <%= link_to 'Update profile', edit_user_registration_path %>
 <% end %>
-test4
+
 <%= link_to @user.name, user_path(@user) %>
 <% end %>
-
+</h3>
+</div>
 
 

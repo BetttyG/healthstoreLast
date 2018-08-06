@@ -1,64 +1,62 @@
+// #default {
+//     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+//     border-collapse: collapse;
+//     width: 100%;
+// }
+
+// #default td, #default th {
+//     border: 1px solid #ddd;
+//     padding: 8px;
+// }
+
+// #default tr:th-child(even){background-color: #f2f2f2;}
+
+// #default tr:hover {background-color: #ddd;}
+
+// #default th {
+//     padding-top: 12px;
+//     padding-bottom: 12px;
+//     text-align: left;
+//     background-color: #4CAF50;
+//     color: white;
+// }
+
+// .panel {
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
+// .panel-body {
+//   color: #364347;
+// }
+// .panel-default {
+//   border-color: #d6e1e5;
+// }
+// .panel-default > .panel-heading {
+//   color: #364347;
+//   background-color: #e1eef3;
+//   border-color: #d6e1e5;
+// }
+// .panel-default > .panel-heading + .panel-collapse .panel-body {
+//   border-top-color: #d6e1e5;
+// }
+// .panel-default > .panel-footer + .panel-collapse .panel-body {
+//   border-bottom-color: #d6e1e5;
+// }
 
 
-#customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#customers td, #customers th {
-    border: 1px solid #fad46b;
-    padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #fad46b;}
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #fad46b;
-    color: white;
-}
-
-.panel {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.panel-body {
-  color: #364347;
-}
-.panel-default {
-  border-color: #d6e1e5;
-}
-.panel-default > .panel-heading {
-  color: #364347;
-  background-color: #e1eef3;
-  border-color: #d6e1e5;
-}
-.panel-default > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #d6e1e5;
-}
-.panel-default > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #d6e1e5;
-}
-
-
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  padding: 14px 5px;
-  border-top: 1px solid #d6e1e5;
-}
-.table > thead > tr > th {
-  border-bottom: 2px solid #d6e1e5;
-  font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif;
-}
+// .table > thead > tr > th,
+// .table > tbody > tr > th,
+// .table > tfoot > tr > th,
+// .table > thead > tr > td,
+// .table > tbody > tr > td,
+// .table > tfoot > tr > td {
+//   padding: 14px 5px;
+//   border-top: 1px solid #d6e1e5;
+// }
+// .table > thead > tr > th {
+//   border-bottom: 2px solid #d6e1e5;
+//   font-family: "SourceSansProSemiBold", Helvetica, Arial, sans-serif;
+// }
 
 ////////////////////////
 

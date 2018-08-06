@@ -42,6 +42,7 @@ class CartController < ApplicationController
     
   end
 
+
   
   def index
     #pass the cart to be displayed

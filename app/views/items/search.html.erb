@@ -2,15 +2,15 @@
 <h2>No item found.....try search again</h2>
 <% end %>
 
-<div id="itemsContainer">
+<div id="prodCont">
   
   <h1>Items</h1>
      
       <% @items.each do |item| %>
-      <div class="itemhols">
+      <div class="prod">
        <h1><%= item.title %></h1>
        
-       <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+       <%= link_to (image_tag item.image_url, :class => "prodIm"), item %>
         <p><%= item.description %></p>
        <p>Price <%= number_to_currency(item.price, :unit => "€") %>
        <br>
@@ -18,18 +18,18 @@
         <br>
         Brand: <%= item.brand %></p>
         
-       <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+       <%= link_to 'Show',  item, :class => "btn btn-block btn-info active btn-embossed", :role => "button" %>
        
        <p>
        <% if current_user && !current_user.admin %>  
-        <a href="/cart/<%= item.id %>" class="button">Add To Cart</a>
+        <a href="/cart/<%= item.id %>" class="btn btn-block btn-info active btn-embossed">Add To Cart</a>
         <% end %>
          
           
         <% if current_user && current_user.admin %>   
-         <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
-         <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
-         <%= link_to 'New Item',  new_item_path, :class => "button", :role => "button" %>
+         <%= link_to 'Edit',  edit_item_path(item), :class => "btn btn-block btn-info active btn-embossed ", :role => "button" %>
+         <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-block btn-info active btn-embossed ", :role => "button" %>
+         <%= link_to 'New Item',  new_item_path, :class => "btn btn-block btn-info active btn-embossed ", :role => "button" %>
           <% end %>
        </p>
         

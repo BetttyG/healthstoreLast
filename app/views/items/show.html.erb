@@ -2,12 +2,12 @@
 
 
 
- <div id="itemsContainer">
+ <div class="prod">
    <h1><%= @item.title %></h1>
-   <%= image_tag @item.image_url, :class => 'welcomIm'  %>
-       <h2><%= @item.description %></h1>
+   <%= image_tag @item.image_url, :class => 'imDesc'  %>
+       <p><%= @item.description %></p>
    
-    <div class="itemhols">
+    <div class="prod">
        <p>Price <%= number_to_currency(@item.price, :unit => "€") %>
        <br>
         Category: <%= @item.category %>
@@ -15,9 +15,9 @@
         Brand: <%= @item.brand %></p>
        
        <p>
-         <%= link_to 'Back',  items_path, :class => "button", :role => "button" %>
+         <%= link_to 'Back',  items_path, :class => "btn btn-block btn-info active btn-embossed", :role => "button" %>
          <% if current_user && current_user.admin %>
-         <%= link_to 'Edit',  edit_item_path(@item), :class => "button", :role => "button" %>
+         <%= link_to 'Edit',  edit_item_path(@item), :class => "btn btn-block btn-info active btn-embossed ", :role => "button" %>
         <% end %> 
        </p>
         

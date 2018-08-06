@@ -4,6 +4,9 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+#config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -78,6 +81,9 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+## added
+  serve_static_assets = true
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'

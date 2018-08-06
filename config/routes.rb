@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   resources :categories
   #get 'users/show'
   
-  resources :orders do resources:orderitemsend
+  resources :orders do resources :orderitemsend
 end
 
-  devise_for :users do resources:orders end
+  devise_for :users do resources :orders end
   resources :users
 
   get '/checkout' =>'cart#createOrder'

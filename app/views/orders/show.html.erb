@@ -7,14 +7,13 @@
  
  
 </p>
-  <strong>User ID: This user id  is:<%= @order.id %></strong>
-
-   
- 
-
-
+  <strong>Order ID: <%= @order.id %></strong>
+  <p>
+  <strong>User Name:</strong>
+  <%= @order.user.name %>
+</p>
 <p>
-  <strong>User:</strong>
+  <strong>User Email:</strong>
   <%= @order.user.email %>
 </p>
 
@@ -30,16 +29,16 @@
 
 <%= link_to 'Back', orders_path %>
 <% end %>
-<div class="panel panel-default">
+
   <h1>Items in this order</h1>
-  <div class="panel-heading">Panel heading</div>
-  <div class="panel panel-default">
-    <table class="table">
+
+<div id="prodCont">
+    <table id="default">
 
     <% @orderitems.each do |orderitem|  %>
       <thead>
       <tr>
-        <td><%= orderitem.title %></td>
+        <td><%= orderitem.title %> </td>
         <td><%= orderitem.quantity %></td>
       </tr>
     </thead>
@@ -48,7 +47,7 @@
 
 </table>
 </div>
-</div>
+
 <% if current_user && current_user.admin %>
-  <a href="/shipped/" class="button">Mark as shipped</a>
+  <a href="/shipped/" class="btn btn-block btn-info active btn-embossed ">Mark as shipped</a>
 <% end %>

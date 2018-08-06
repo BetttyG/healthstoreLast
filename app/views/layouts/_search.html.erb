@@ -1,5 +1,5 @@
 <%= form_tag("/search", :method => "post") do %>
 <%= label_tag(:q, "Search for: ")%>
 <%= text_field_tag(:q) %>
-<%= submit_tag("Search")%>
+<%= submit_tag("Search", class: "btn btn-block btn-info active btn-embossed " )%>
 <% end %>
